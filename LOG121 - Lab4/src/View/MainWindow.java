@@ -13,7 +13,9 @@ import javax.swing.JOptionPane;
 
 public class MainWindow extends JFrame
 {
-	
+	private ImagePanel perspectiveView1;
+	private ImagePanel perspectiveView2;
+	private ImagePanel ThumbnailView;
 	
 
 	public MainWindow()

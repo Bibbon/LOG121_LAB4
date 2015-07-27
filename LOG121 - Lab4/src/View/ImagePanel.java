@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 public class ImagePanel extends JPanel{
 
-	private JPanel panelImage = new JPanel();
+	private JPanel panelImage;
 	
 	/*
 	 * constructor
