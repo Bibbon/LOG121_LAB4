@@ -8,6 +8,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import Controller.ViewListener;
+
 public class MenuWindow extends JMenuBar
 {
 
@@ -38,28 +40,19 @@ public class MenuWindow extends JMenuBar
 	 */
 	private void initMenu(){
 
-
-		fileOpenImage.addActionListener(new MenuListener());
+        ViewListener viewListener = new ViewListener();
+		fileOpenImage.addActionListener(viewListener);
 		menuFile.add(fileOpenImage);
-		fileOpenProject.addActionListener(new MenuListener());
+		fileOpenProject.addActionListener(viewListener);
 		menuFile.add(fileOpenProject);	
-		fileSave.addActionListener(new MenuListener());
+		fileSave.addActionListener(viewListener);
 		menuFile.add(fileSave);
 		add(menuFile);
-		
-		/*
-		zoomIn.addActionListener(new MenuListener());
-		menuZoom.add(zoomIn);
-		zoomOut.addActionListener(new MenuListener());
-		menuZoom.add(zoomOut);
-		add(menuZoom);
-		*/
-		
-		actionNewThumbnail.addActionListener(new MenuListener());
+		actionNewThumbnail.addActionListener(viewListener);
 		menuAction.add(actionNewThumbnail);
-		actionUndo.addActionListener(new MenuListener());
+		actionUndo.addActionListener(viewListener);
 		menuAction.add(actionUndo);
-		actionRedo.addActionListener(new MenuListener());
+		actionRedo.addActionListener(viewListener);
 		menuAction.add(actionRedo);
 		add(menuAction);
 
@@ -67,16 +60,5 @@ public class MenuWindow extends JMenuBar
 	}
 
 	
-	/**
-	 * Listener for the buttons
-	 */
-	private class MenuListener implements ActionListener {
 
-		public void actionPerformed(ActionEvent arg0) {
-
-
-
-
-		}
-	}
 }

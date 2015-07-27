@@ -21,9 +21,8 @@ public class Client {
 		mainImage = new Thumbnail(imageSelector.getBufferedImage());
 		perspective1 = new Perspective(imageSelector.getBufferedImage());
 		perspective2 = new Perspective(imageSelector.getBufferedImage());
-		mainWindow = new MainWindow();
-		
-
+		mainWindow = new MainWindow(imageSelector.getBufferedImage());
+	
 	}
 	
 	public Perspective getPerspective1() {

@@ -4,6 +4,7 @@ package View;
 import java.awt.BorderLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
@@ -13,23 +14,18 @@ import javax.swing.JOptionPane;
 
 public class MainWindow extends JFrame
 {
-	private ImagePanel perspectiveView1;
-	private ImagePanel perspectiveView2;
-	private ImagePanel ThumbnailView;
+	private MainPanel mainPanel;
+	MenuWindow menu;
+
 	
 
-	public MainWindow()
+	public MainWindow(BufferedImage image)
 	{	
 		setLayout(new BorderLayout());
-		
-		MenuWindow menu = new MenuWindow();
+		menu = new MenuWindow();
 		add(menu, BorderLayout.NORTH);
-		ImagePanel mainImage = new ImagePanel();
-		add(mainImage, BorderLayout.CENTER);
-		
-		Thumbnail subImage = new Thumbnail();
-		add(subImage, BorderLayout.SOUTH);
-		
+		mainPanel = new MainPanel(image);
+		add(mainPanel, BorderLayout.CENTER);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
 		setVisible(true);
