@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class Thumbnail extends JPanel{
-
+	
 	private static final int TEXT_LENGHT = 4;
 
 	//private JPanel panelImage = new JPanel();
@@ -27,14 +27,14 @@ public class Thumbnail extends JPanel{
 	public Thumbnail(){
 		initThumbnail();
 	}
-
+	
 
 	private void initThumbnail() {
 		add(addThumbnail());
 		add(addThumbnail());
-		//add(addThumbnail());
+		add(addThumbnail());
 	}
-
+	
 	private Component addThumbnail() {
 
 		JPanel panelThumbnail = new JPanel();
@@ -43,11 +43,11 @@ public class Thumbnail extends JPanel{
 		panelThumbnail.setLayout(new BorderLayout());
 
 		panelThumbnail.add(addThumbnailParameter(), BorderLayout.NORTH);
-		ImageIcon image = new ImageIcon("image/pic1.jpg");
+		ImageIcon image = new ImageIcon("image/pic1");
 		JLabel imageLabel = new JLabel("", image, JLabel.CENTER);
 		panelThumbnail.add(imageLabel, BorderLayout.CENTER);
 		panelThumbnail.add(addThumbnailZoom(), BorderLayout.EAST);
-
+		
 		return add(panelThumbnail);
 
 	}
@@ -55,7 +55,7 @@ public class Thumbnail extends JPanel{
 	private Component addThumbnailParameter(){
 
 		JPanel panelThumbnailParameter = new JPanel();
-
+		
 		//add initial position field
 		JLabel labelPosition = new JLabel("Position (X;Y):");
 		panelThumbnailParameter.add(labelPosition, BorderLayout.NORTH);
@@ -64,12 +64,6 @@ public class Thumbnail extends JPanel{
 		JTextField posY = new JTextField(TEXT_LENGHT);
 		panelThumbnailParameter.add(posY, BorderLayout.NORTH);
 
-		//add zoomRation field
-		JLabel labelZoomRatio = new JLabel("Zoom Ratio:");
-		panelThumbnailParameter.add(labelZoomRatio, BorderLayout.NORTH);
-		JTextField zoomRatio = new JTextField(TEXT_LENGHT);
-		panelThumbnailParameter.add(zoomRatio, BorderLayout.NORTH);
-/*
 		//add width field
 		JLabel labelWidth = new JLabel("Width:");
 		panelThumbnailParameter.add(labelWidth, BorderLayout.NORTH);
@@ -81,7 +75,7 @@ public class Thumbnail extends JPanel{
 		panelThumbnailParameter.add(labelHeight, BorderLayout.NORTH);
 		JTextField height = new JTextField(TEXT_LENGHT);
 		panelThumbnailParameter.add(height, BorderLayout.NORTH);
-*/
+		
 		JButton close = new JButton("X");
 		panelThumbnailParameter.add(close);
 
@@ -89,19 +83,19 @@ public class Thumbnail extends JPanel{
 
 		return panelThumbnailParameter;
 	} 
-
+	
 	private Component addThumbnailZoom(){
 		JPanel panelThumbnailZoom = new JPanel();
-
+		
 		panelThumbnailZoom.setLayout(new BoxLayout(panelThumbnailZoom ,BoxLayout.PAGE_AXIS));
 		//panelThumbnailZoom.setLayout(new BorderLayout());
-
+		
 		JButton zoomIn = new JButton("+");
 		panelThumbnailZoom.add(zoomIn);
-
+		
 		JButton zoomOut = new JButton("-");
 		panelThumbnailZoom.add(zoomOut);
-
+		
 		return panelThumbnailZoom;
 	}
 

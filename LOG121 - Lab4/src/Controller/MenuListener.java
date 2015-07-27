@@ -13,7 +13,10 @@ public class MenuListener implements ActionListener  {
 		//Memorise the value of the click bouton
 		bouton = arg0.getActionCommand();
 
-		if(bouton.equals("Open Image")){				
+		if(bouton.equals("Open Image")){
+			
+			ImageSelector IS = new ImageSelector();
+			IS.getBufferedImage();
 
 
 

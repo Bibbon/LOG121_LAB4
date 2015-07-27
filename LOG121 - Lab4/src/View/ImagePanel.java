@@ -12,14 +12,14 @@ import javax.swing.JPanel;
 
 
 
-public class MainImage extends JPanel{
+public class ImagePanel extends JPanel{
 
 	private JPanel panelImage = new JPanel();
 	
 	/*
 	 * constructor
 	 */
-	public MainImage(){
+	public ImagePanel(){
 		super();
 		initMainImage();
 	}
@@ -31,7 +31,7 @@ public class MainImage extends JPanel{
 		setBackground(Color.BLUE);
 		//panelImage.setPreferredSize(new Dimension(640, 480));
 
-		ImageIcon image = new ImageIcon("image/pic1.jpg");
+		ImageIcon image = new ImageIcon("image/pic1");
 		JLabel imageLabel = new JLabel("", image, JLabel.CENTER);
 		
 		panelImage.add( imageLabel, BorderLayout.CENTER );

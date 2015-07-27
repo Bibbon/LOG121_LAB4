@@ -10,15 +10,21 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class ImageSelector {
 	
+	private static final String EXTENSION_TYPE = "Image Type";
+	private static final String JPG = "JPG";
+	private static final String JPEG = "JPEG";
+	private static final String PNG = "PNG";
+	
 	private JFileChooser imageChooser;
 	private FileNameExtensionFilter imageFilter;
 	private File imageFile;
 	
 	
-	public ImageSelector(String filetype, String... extensions){
+	public ImageSelector(){
 		this.imageChooser = new JFileChooser();
-		this.imageFilter = new FileNameExtensionFilter(filetype, extensions);
+		this.imageFilter = new FileNameExtensionFilter(EXTENSION_TYPE, JPG, JPEG, PNG);
 		this.imageChooser.setFileFilter(imageFilter);
+		SelectImage();
 	}
 
 
@@ -59,7 +65,6 @@ public class ImageSelector {
 	
 	public BufferedImage getBufferedImage(){
 		
-		SelectImage();
 		BufferedImage img = null;
 		
 		try {
@@ -76,7 +81,6 @@ public class ImageSelector {
 	
 	public String getImagePath(){
 		
-		SelectImage();
 		return imageFile.getAbsolutePath();
 		
 	}

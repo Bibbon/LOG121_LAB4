@@ -13,15 +13,16 @@ import javax.swing.JOptionPane;
 
 public class MainWindow extends JFrame
 {
+	
+	
 
 	public MainWindow()
 	{	
 		setLayout(new BorderLayout());
 		
 		MenuWindow menu = new MenuWindow();
-		add(menu, BorderLayout.NORTH); 
-		
-		MainImage mainImage = new MainImage();
+		add(menu, BorderLayout.NORTH);
+		ImagePanel mainImage = new ImagePanel();
 		add(mainImage, BorderLayout.CENTER);
 		
 		Thumbnail subImage = new Thumbnail();

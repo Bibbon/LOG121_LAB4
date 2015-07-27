@@ -8,8 +8,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-import Controller.MenuListener;
-
 public class MenuWindow extends JMenuBar
 {
 
@@ -68,4 +66,17 @@ public class MenuWindow extends JMenuBar
 		
 	}
 
+	
+	/**
+	 * Listener for the buttons
+	 */
+	private class MenuListener implements ActionListener {
+
+		public void actionPerformed(ActionEvent arg0) {
+
+
+
+
+		}
+	}
 }

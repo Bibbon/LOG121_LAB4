@@ -45,8 +45,11 @@ public class Perspective extends Observable{
 		this.topLeftCorner.y = (minY >= 0) ? minY: 0;
 		this.bottomRightCorner.x = (maxX <= width) ? maxX: width;
 		this.bottomRightCorner.y = (maxY <= height) ? maxY: height;
+		setChanged();
+		notifyObservers();
 		
 		
 	}
+	
 	
 }
