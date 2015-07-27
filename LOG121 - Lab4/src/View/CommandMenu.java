@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class Thumbnail extends JPanel{
+public class CommandMenu extends JPanel{
 	
 	private static final int TEXT_LENGHT = 4;
 
@@ -24,7 +24,7 @@ public class Thumbnail extends JPanel{
 	/*
 	 * constructor
 	 */
-	public Thumbnail(){
+	public CommandMenu(){
 		initThumbnail();
 	}
 	
