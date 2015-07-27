@@ -2,7 +2,7 @@ package Controller;
 
 import Model.Perspective;
 
-public class ZoomInCommand implements ViewCommand{
+public class ZoomOutCommand implements ViewCommand{
 
 	private Perspective perspective;
 	
@@ -22,7 +22,7 @@ public class ZoomInCommand implements ViewCommand{
 	
 	private static final int SCALING_FACTOR = 2;
 	
-	public ZoomInCommand(Perspective perspective){
+	public ZoomOutCommand(Perspective perspective){
 		
 		this.perspective = perspective;
 
@@ -40,7 +40,7 @@ public class ZoomInCommand implements ViewCommand{
 		calculateNewPosition();
 	}
 	
-	public ZoomInCommand(Perspective perspective, int x, int y){
+	public ZoomOutCommand(Perspective perspective, int x, int y){
 		
 		this.perspective = perspective;
 
@@ -60,10 +60,10 @@ public class ZoomInCommand implements ViewCommand{
 	
 	private void calculateNewPosition(){
 		
-		newMinX = newCenterX - ((centerX - minX)/SCALING_FACTOR);
-		newMinY = newCenterY - ((centerY - minY)/SCALING_FACTOR);
-		newMaxX = newCenterX + ((maxX - centerX)/SCALING_FACTOR);
-		newMaxY = newCenterY + ((maxY - centerY)/SCALING_FACTOR);
+		newMinX = newCenterX - ((centerX - minX)*SCALING_FACTOR);
+		newMinY = newCenterY - ((centerY - minY)*SCALING_FACTOR);
+		newMaxX = newCenterX + ((maxX - centerX)*SCALING_FACTOR);
+		newMaxY = newCenterY + ((maxY - centerY)*SCALING_FACTOR);
 		
 	}
 
