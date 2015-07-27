@@ -1,5 +1,5 @@
 package Controller;
 
-public class UndoCommand {
+public class UndoCommand implements ViewCommand{
 
 }
