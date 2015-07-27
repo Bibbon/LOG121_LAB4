@@ -1,13 +1,17 @@
 package Controller;
 
 import java.util.*;
+import Model.Perspective;
 
 public class CommandManager {
 
-	private CommandManager instance = null;
-	private List<ViewCommand> history = new ArrayList<ViewCommand>();
+	private CommandManager instance;
+	private List<ViewCommand> history;
 	
 	private CommandManager(){
+
+		CommandManager instance = null;
+		List<ViewCommand> history = new ArrayList<ViewCommand>();
 
 	}
 	
@@ -18,16 +22,34 @@ public class CommandManager {
 		return instance;
 	}
 	
-	public void storeAndExecute (ViewCommand cmd){
+	private void storeAndExecute(ViewCommand cmd){
 		this.history.add(cmd);
 		cmd.execute();
 	}
 	
-	public ViewCommand getLastCommand (){
+	private ViewCommand getLastCommand (){
 		return this.history.get(history.size() - 1);
 	}
 	
-	public ViewCommand removeLastCommand (){
+	private ViewCommand removeLastCommand (){
 		return this.history.remove(history.size() - 1);
+	}
+	
+
+	
+	public void zoomIn(Perspective perspective){
+		storeAndExecute(new ZoomInCommand(perspective));
+	}
+	
+	public void zoomIn(Perspective perspective, int x, int y){
+		storeAndExecute(new ZoomInCommand(perspective, x, y));
+	}
+	
+	public void zoomOut(Perspective perspective){
+		storeAndExecute(new ZoomOutCommand(perspective));
+	}
+	
+	public void zoomOut(Perspective perspective, int x, int y){
+		storeAndExecute(new ZoomOutCommand(perspective, x, y));
 	}
 }
